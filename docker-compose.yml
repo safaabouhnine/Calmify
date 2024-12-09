@@ -43,6 +43,9 @@ services:
       - "5000:5000" # Port pour l'API NLP si elle est exposée
     networks:
       - app-network
+    volumes:
+      - ./NLP:/app  # Maps the NLP directory to /app inside the container
+    command: python app/app.py
 
   # PostgreSQL Database Service
   db:
